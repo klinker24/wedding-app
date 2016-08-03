@@ -8,4 +8,6 @@
     <color name="backgroundColor">#fafafa</color>
     <color name="dividerColor">#cacaca</color>
     <color name="searchTextColor">#99000000</color>
+
+    <color name="contentPlaceholder">#ffe0e0e0</color>
 </resources>

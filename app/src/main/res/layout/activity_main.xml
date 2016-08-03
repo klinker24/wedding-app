@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_main"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context="xyz.klinker.wedding.MainActivity">
+    tools:context="xyz.klinker.wedding.activity.MainActivity">
 
     <!-- holds the top section, above the divider -->
     <LinearLayout
@@ -40,13 +40,11 @@
 
             <!-- Holds the fragment with the contact list -->
             <FrameLayout
-                android:id="@+id/fragment_contact_list"
+                android:id="@+id/fragment_guest_list"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_marginTop="1dp" >
-                <include layout="@layout/fragment_contacts" />
-            </FrameLayout>
+                android:layout_marginTop="1dp" />
 
         </LinearLayout>
 

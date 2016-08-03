@@ -41,9 +41,7 @@
             android:id="@+id/fragment_seating_info"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
-            <include layout="@layout/fragment_seating_info"/>
-        </FrameLayout>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
