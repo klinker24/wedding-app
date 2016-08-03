@@ -10,14 +10,14 @@ import android.widget.TextView;
 import xyz.klinker.wedding.R;
 import xyz.klinker.wedding.data.Guest;
 
-public class ReceptionInformationFragment extends Fragment {
+public class GuestInfoFragment extends Fragment {
 
     private static final String ARG_GUEST_ID = "arg_guest_id";
-    public static ReceptionInformationFragment getInstance(Guest guest) {
+    public static GuestInfoFragment getInstance(Guest guest) {
         Bundle args = new Bundle();
         args.putInt(ARG_GUEST_ID, guest.getId());
 
-        ReceptionInformationFragment fragment = new ReceptionInformationFragment();
+        GuestInfoFragment fragment = new GuestInfoFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -29,7 +29,7 @@ public class ReceptionInformationFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_reception_information, container, false);
+        View root = inflater.inflate(R.layout.fragment_guest_info, container, false);
 
         int guestId = getArguments().getInt(ARG_GUEST_ID);
         guest = Guest.findById(guestId);
@@ -38,7 +38,7 @@ public class ReceptionInformationFragment extends Fragment {
         table = (TextView) root.findViewById(R.id.table);
 
         name.setText(guest.getName());
-        table.setText("Table Number: " + guest.getTable());
+        table.setText(getString(R.string.table_number).replace("%s", guest.getTable() + ""));
 
         return root;
     }

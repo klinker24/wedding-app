@@ -7,4 +7,5 @@
     <string name="seating_information">Reception Information</string>
 
     <string name="search">Search &#8230;</string>
+    <string name="table_number">Table Number %s</string>
 </resources>

@@ -32,7 +32,7 @@ public class GuestViewHolder extends RecyclerView.ViewHolder {
         this.guest = guest;
 
         name.setText(guest.getName());
-        table.setText("Table Number: " + guest.getTable());
+        table.setText(itemView.getContext().getString(R.string.table_number).replace("%s", guest.getTable() + ""));
     }
 
     public Guest getGuest() {

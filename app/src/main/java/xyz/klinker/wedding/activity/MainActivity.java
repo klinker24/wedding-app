@@ -27,4 +27,10 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.fragment_guest_list, new GuestFragment())
                 .commit();
     }
+
+    @Override
+    public void onBackPressed() {
+        // I don' want anyone pressing the back button to leave the app by accident
+        // Should be screen pinned, but still, just in case.
+    }
 }

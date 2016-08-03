@@ -1,13 +1,16 @@
 package xyz.klinker.wedding.fragment;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Fade;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import xyz.klinker.wedding.R;
@@ -21,7 +24,10 @@ public class GuestFragment extends Fragment implements GuestClickListener {
     private EditText search;
     private RecyclerView recycler;
 
+    private OnSearchTextChanged textWatcher;
     private GuestAdapter adapter;
+
+    private Fragment infoFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -35,22 +41,47 @@ public class GuestFragment extends Fragment implements GuestClickListener {
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         recycler.setAdapter(adapter);
 
-        search.addTextChangedListener(new OnSearchTextChanged(adapter));
+        textWatcher = new OnSearchTextChanged(this);
+        search.addTextChangedListener(textWatcher);
+
+        resetReceptionDetailsFragment();
 
         return root;
     }
 
     @Override
     public void onGuestClicked(GuestViewHolder holder) {
-        ReceptionInformationFragment fragment = ReceptionInformationFragment.getInstance(holder.getGuest());
-        fragment.setEnterTransition(new Fade());
-        fragment.setExitTransition(new Fade());
+        infoFragment = GuestInfoFragment.getInstance(holder.getGuest());
+        infoFragment.setEnterTransition(new Fade());
+        infoFragment.setExitTransition(new Fade());
 
         getActivity().getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragment_seating_info, fragment)
+                .replace(R.id.fragment_seating_info, infoFragment)
                 .commit();
 
+        textWatcher.ignoreResetText();
         search.setText("");
+
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
+    }
+
+    public void resetReceptionDetailsFragment() {
+        if (!(infoFragment instanceof ReceptionInfoFragment)) {
+            infoFragment = new ReceptionInfoFragment();
+            infoFragment.setEnterTransition(new Fade());
+            infoFragment.setExitTransition(new Fade());
+
+            getActivity().getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_seating_info, infoFragment)
+                    .commit();
+
+        }
+    }
+
+    public GuestAdapter getAdapter() {
+        return adapter;
     }
 }

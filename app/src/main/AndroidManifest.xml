@@ -12,9 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <meta-data
+            android:name="xyz.klinker.wedding.util.ImageQualityGlideModule"
+            android:value="GlideModule" />
+
         <activity
             android:name=".activity.MainActivity"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustNothing" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
