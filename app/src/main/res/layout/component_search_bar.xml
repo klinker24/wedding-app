@@ -23,6 +23,8 @@
         android:background="@android:color/transparent"
         android:hint="@string/search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:maxLines="1"
+        android:imeOptions="flagNoExtractUi" />
 
 </LinearLayout>

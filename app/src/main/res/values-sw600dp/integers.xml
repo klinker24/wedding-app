@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="weight_guest_list">6</integer>
+    <integer name="weight_guest_info">9</integer>
+    <integer name="weight_end_space">1</integer>
+
+</resources>

@@ -61,7 +61,7 @@ public class GuestListFragment extends Fragment implements GuestClickListener {
 
         getActivity().getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragment_seating_info, infoFragment)
+                .replace(R.id.fragment_guest_info, infoFragment)
                 .commit();
 
         textWatcher.ignoreResetText();
@@ -81,7 +81,7 @@ public class GuestListFragment extends Fragment implements GuestClickListener {
 
             getActivity().getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_seating_info, infoFragment)
+                    .replace(R.id.fragment_guest_info, infoFragment)
                     .commit();
 
         }

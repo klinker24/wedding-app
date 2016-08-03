@@ -35,7 +35,7 @@
         <include layout="@layout/component_divider" />
 
         <FrameLayout
-            android:id="@+id/fragment_seating_info"
+            android:id="@+id/fragment_guest_info"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
