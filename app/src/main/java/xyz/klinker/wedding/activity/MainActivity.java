@@ -89,7 +89,10 @@ public class MainActivity extends AppCompatActivity implements GuestClickListene
                 .commit();
 
         guestListFragment.setSearchText("");
+        hideKeyboard();
+    }
 
+    public void hideKeyboard() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(title.getWindowToken(), 0);
     }

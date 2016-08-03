@@ -13,6 +13,8 @@ import com.bumptech.glide.Glide;
 
 import xyz.klinker.wedding.R;
 import xyz.klinker.wedding.activity.MainActivity;
+import xyz.klinker.wedding.util.ListTagHandler;
+import xyz.klinker.wedding.util.WelcomeMessage;
 
 public class ReceptionInfoFragment extends Fragment {
 
@@ -27,8 +29,7 @@ public class ReceptionInfoFragment extends Fragment {
 
         header.setClipToOutline(true);
         Glide.with(getActivity()).load(IMAGE_URL).centerCrop().into(header);
-        receptionInfo.setText(Html.fromHtml("<b>Thanks for coming!</b><br><br>" +
-                "We are delighted that you could share this special day with us! Enjoy your evening, here is a rough schedule for the night:"));
+        receptionInfo.setText(Html.fromHtml(WelcomeMessage.MESSAGE, null, new ListTagHandler()));
 
         return root;
     }
