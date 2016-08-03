@@ -10,19 +10,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import xyz.klinker.wedding.R;
+import xyz.klinker.wedding.activity.MainActivity;
 import xyz.klinker.wedding.data.Guest;
 import xyz.klinker.wedding.listener.GuestClickListener;
 
 public class GuestAdapter extends RecyclerView.Adapter<GuestViewHolder> {
 
-    private Context context;
+    private MainActivity context;
     private GuestClickListener listener;
 
     private List<Guest> guests = new ArrayList<>();
 
-    public GuestAdapter(Context context, GuestClickListener listener) {
+    public GuestAdapter(MainActivity context) {
         this.context = context;
-        this.listener = listener;
+        this.listener = context;
 
         loadAllGuests();
     }

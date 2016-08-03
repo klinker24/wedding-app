@@ -4,19 +4,20 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 
+import xyz.klinker.wedding.activity.MainActivity;
 import xyz.klinker.wedding.adapter.GuestAdapter;
 import xyz.klinker.wedding.fragment.GuestListFragment;
 
 public class OnSearchTextChanged implements TextWatcher {
 
-    private GuestListFragment fragment;
+    private MainActivity activity;
     private GuestAdapter adapter;
 
     private boolean ignoreNext = false;
 
-    public OnSearchTextChanged(GuestListFragment fragment) {
+    public OnSearchTextChanged(MainActivity activity, GuestListFragment fragment) {
         this.adapter = fragment.getAdapter();
-        this.fragment = fragment;
+        this.activity = activity;
     }
 
     // region TextWatcher methods
@@ -34,7 +35,7 @@ public class OnSearchTextChanged implements TextWatcher {
     @Override
     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
         if (!ignoreNext) {
-            fragment.resetReceptionDetailsFragment();
+            activity.resetToReceptionInfo();
         } else {
             ignoreNext = false;
         }
@@ -47,7 +48,7 @@ public class OnSearchTextChanged implements TextWatcher {
 
     }
 
-    public void ignoreResetText() {
+    public void ignoreNextTextChange() {
         ignoreNext = true;
     }
 }
