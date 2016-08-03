@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_main"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="xyz.klinker.wedding.MainActivity">
+
+    <!-- holds the top section, above the divider -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View android:layout_width="match_parent" android:layout_height="150dp" />
+        <include layout="@layout/component_divider" />
+
+    </LinearLayout>
+
+    <!-- Holds the content -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_marginEnd="-4dp"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <include layout="@layout/component_toolbar_title_section" />
+
+            </FrameLayout>
+
+            <!-- Holds the fragment with the contact list -->
+            <FrameLayout
+                android:id="@+id/fragment_contact_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="1dp" >
+                <include layout="@layout/fragment_contacts" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="75dp" />
+
+            <include layout="@layout/component_seating_card" />
+
+
+        </LinearLayout>
+
+        <View android:layout_weight="1" android:layout_width="0dp" android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

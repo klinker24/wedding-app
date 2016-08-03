@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFF</color>
+    <color name="colorPrimaryDark">#DDD</color>
+    <color name="colorAccent">#99000000</color>
+
+    <color name="materialOrange">#FF9800</color>
+    <color name="backgroundColor">#fafafa</color>
+    <color name="dividerColor">#cacaca</color>
+    <color name="searchTextColor">#99000000</color>
+</resources>

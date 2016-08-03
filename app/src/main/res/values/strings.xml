@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Wedding</string>
+
+    <string name="welcome">Welcome to our Wedding!</string>
+    <string name="hannah_and_lucas">♥ Hannah and Lucas</string>
+
+    <string name="seating_information">Seating Information</string>
+
+    <string name="search">Search &#8230;</string>
+</resources>
