@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import xyz.klinker.wedding.R;
+import xyz.klinker.wedding.activity.MainActivity;
 import xyz.klinker.wedding.data.Guest;
 
 public class GuestInfoFragment extends Fragment {

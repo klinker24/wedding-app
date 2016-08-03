@@ -5,16 +5,16 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 
 import xyz.klinker.wedding.adapter.GuestAdapter;
-import xyz.klinker.wedding.fragment.GuestFragment;
+import xyz.klinker.wedding.fragment.GuestListFragment;
 
 public class OnSearchTextChanged implements TextWatcher {
 
-    private GuestFragment fragment;
+    private GuestListFragment fragment;
     private GuestAdapter adapter;
 
     private boolean ignoreNext = false;
 
-    public OnSearchTextChanged(GuestFragment fragment) {
+    public OnSearchTextChanged(GuestListFragment fragment) {
         this.adapter = fragment.getAdapter();
         this.fragment = fragment;
     }
@@ -39,7 +39,7 @@ public class OnSearchTextChanged implements TextWatcher {
             ignoreNext = false;
         }
 
-        if (charSequence == null || TextUtils.isEmpty(charSequence)) {
+        if (charSequence == null || TextUtils.isEmpty(charSequence.toString().replace(" ", ""))) {
             adapter.loadAllGuests();
         } else {
             adapter.loadSearch(charSequence.toString());

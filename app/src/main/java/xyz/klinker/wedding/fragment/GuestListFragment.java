@@ -19,7 +19,7 @@ import xyz.klinker.wedding.adapter.GuestViewHolder;
 import xyz.klinker.wedding.listener.GuestClickListener;
 import xyz.klinker.wedding.listener.OnSearchTextChanged;
 
-public class GuestFragment extends Fragment implements GuestClickListener {
+public class GuestListFragment extends Fragment implements GuestClickListener {
 
     private EditText search;
     private RecyclerView recycler;
@@ -51,6 +51,10 @@ public class GuestFragment extends Fragment implements GuestClickListener {
 
     @Override
     public void onGuestClicked(GuestViewHolder holder) {
+        if (infoFragment instanceof ReceptionInfoFragment) {
+            getActivity().setTitle(getString(R.string.seating_information));
+        }
+
         infoFragment = GuestInfoFragment.getInstance(holder.getGuest());
         infoFragment.setEnterTransition(new Fade());
         infoFragment.setExitTransition(new Fade());
@@ -69,6 +73,8 @@ public class GuestFragment extends Fragment implements GuestClickListener {
 
     public void resetReceptionDetailsFragment() {
         if (!(infoFragment instanceof ReceptionInfoFragment)) {
+            getActivity().setTitle(getString(R.string.reception_information));
+
             infoFragment = new ReceptionInfoFragment();
             infoFragment.setEnterTransition(new Fade());
             infoFragment.setExitTransition(new Fade());

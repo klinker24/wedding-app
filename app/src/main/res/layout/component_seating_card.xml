@@ -25,11 +25,8 @@
             android:gravity="center_vertical"
             android:layout_marginLeft="24dp">
 
-            <TextView
-                android:textSize="21dp"
-                android:fontFamily="sans-serif-light"
-                android:textStyle="bold"
-                android:text="@string/seating_information"
+            <TextSwitcher
+                android:id="@+id/title_switcher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
