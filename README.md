@@ -1,4 +1,4 @@
-[!preview_1](promo/preview_1.png)
+![preview_1](promo/preview_1.png)
 
 # Wedding Seating Chart
 
@@ -6,7 +6,8 @@ A pretty cool, Material Design, app that I created for the seating chart at my w
 
 It is designed for tablets, things are a bit squished on phones, but it works alright.
 
-[!preview_2](promo/preview_2.png)
+![preview_2](promo/preview_2.png)
+
 ---
 
 ## License
