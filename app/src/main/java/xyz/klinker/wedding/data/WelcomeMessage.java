@@ -1,4 +1,4 @@
-package xyz.klinker.wedding.util;
+package xyz.klinker.wedding.data;
 
 public class WelcomeMessage {
 

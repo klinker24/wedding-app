@@ -9,4 +9,6 @@
 
     <string name="search">Type your name &#8230;</string>
     <string name="table_number">Table Number: %s</string>
+
+    <string name="others_guests_at_your_table">Other guests at your table:</string>
 </resources>

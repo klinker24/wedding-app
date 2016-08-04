@@ -12,9 +12,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import xyz.klinker.wedding.R;
-import xyz.klinker.wedding.activity.MainActivity;
 import xyz.klinker.wedding.util.ListTagHandler;
-import xyz.klinker.wedding.util.WelcomeMessage;
+import xyz.klinker.wedding.data.WelcomeMessage;
 
 public class ReceptionInfoFragment extends Fragment {
 

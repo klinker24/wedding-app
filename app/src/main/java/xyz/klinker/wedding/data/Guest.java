@@ -166,6 +166,22 @@ public enum Guest {
         return filtered;
     }
 
+    public static List<Guest> listByTableAndExclude(int tableNumber, Guest exclude) {
+        List<Guest> list = list();
+        List<Guest> filtered = new ArrayList<>();
+
+        Guest guest = null;
+        for (int i = 0; i < list.size(); i++) {
+            guest = list.get(i);
+
+            if (guest.getTable() == tableNumber && guest != exclude) {
+                filtered.add(guest);
+            }
+        }
+
+        return filtered;
+    }
+
     public static Guest findById(int id) {
         for (Guest guest : list()) {
             if (guest.getId() == id) {

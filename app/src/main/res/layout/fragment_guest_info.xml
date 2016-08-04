@@ -6,14 +6,15 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="24dp">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="24dp" >
+            android:layout_marginBottom="32dp" >
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="@dimen/large_avatar_size"
@@ -42,9 +43,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
+
             </LinearLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:text="@string/others_guests_at_your_table"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:fontFamily="sans-serif-light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+
+        <include layout="@layout/component_other_guests_at_table" />
+
+        <ImageView
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/seating_chart"/>
 
     </LinearLayout>
 
