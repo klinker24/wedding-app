@@ -6,7 +6,7 @@ A pretty cool, Material Design, app that I created for the seating chart at my w
 
 It is designed for tablets, things are a bit squished on phones, but it works alright.
 
-![preview_2](promo/preview_2.png)
+This app could very easily be adapted to host the seating chart for any events. Just set out a few tablets and you are ready to go. Check out the [Guest Generator Readme](/guest_generator/README.md) to find out how to import your own guest list instead of using my example one.
 
 ---
 
