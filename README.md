@@ -1,4 +1,4 @@
-![preview_1](promo/preview_1.png)
+![preview_1](promo/wedding-app.gif)
 
 # Wedding Seating Chart
 
