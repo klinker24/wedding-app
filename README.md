@@ -10,9 +10,15 @@ It is designed for tablets, things are a bit squished on phones, but it works al
 
 This app could very easily be adapted to host the seating chart for any events. Just set out a few tablets and you are ready to go. 
 
+#### Using your own guest list
+
 Check out the [Guest Generator Readme](/guest_generator/README.md) to find out how to import your own guest list instead of using my example one.
 
+#### Changing the welcome message
+
 For the _welcome message_ displayed on the "Reception Information" [fragment](https://github.com/klinker24/wedding-app/blob/master/app/src/main/java/xyz/klinker/wedding/fragment/ReceptionInfoFragment.java), edit the [WelcomeMessage](https://github.com/klinker24/wedding-app/blob/master/app/src/main/java/xyz/klinker/wedding/data/WelcomeMessage.java). Feel free to use any HTML tags within this message, for the styling.
+
+#### Adding your own images to the app
 
 There are also three different images that are used in the app:
 
