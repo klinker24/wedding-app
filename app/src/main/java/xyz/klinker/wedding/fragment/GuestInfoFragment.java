@@ -5,13 +5,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 import xyz.klinker.wedding.R;
 import xyz.klinker.wedding.activity.MainActivity;
 import xyz.klinker.wedding.data.Guest;
+import xyz.klinker.wedding.data.ImageConstants;
 
 public class GuestInfoFragment extends Fragment {
 
@@ -50,6 +54,9 @@ public class GuestInfoFragment extends Fragment {
         table.setText(getString(R.string.table_number).replace("%s", guest.getTable() + ""));
 
         setupOtherGuests();
+
+        ImageView seatingChart = (ImageView) root.findViewById(R.id.seating_chart);
+        Glide.with(getActivity()).load(ImageConstants.SEATING_CHART_URL).fitCenter().into(seatingChart);
 
         return root;
     }

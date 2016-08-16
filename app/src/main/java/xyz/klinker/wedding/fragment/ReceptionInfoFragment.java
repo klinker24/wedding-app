@@ -12,12 +12,11 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import xyz.klinker.wedding.R;
+import xyz.klinker.wedding.data.ImageConstants;
 import xyz.klinker.wedding.util.ListTagHandler;
 import xyz.klinker.wedding.data.WelcomeMessage;
 
 public class ReceptionInfoFragment extends Fragment {
-
-    private static final String IMAGE_URL = "https://s32.postimg.org/7zhj7edad/095.jpg";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -27,7 +26,7 @@ public class ReceptionInfoFragment extends Fragment {
         TextView receptionInfo = (TextView) root.findViewById(R.id.reception_information);
 
         header.setClipToOutline(true);
-        Glide.with(getActivity()).load(IMAGE_URL).centerCrop().into(header);
+        Glide.with(getActivity()).load(ImageConstants.HERO_IMAGE_URL).centerCrop().into(header);
         receptionInfo.setText(Html.fromHtml(WelcomeMessage.MESSAGE, null, new ListTagHandler()));
 
         return root;

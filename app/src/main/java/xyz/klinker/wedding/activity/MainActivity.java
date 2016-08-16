@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 
 import xyz.klinker.wedding.R;
 import xyz.klinker.wedding.adapter.GuestViewHolder;
+import xyz.klinker.wedding.data.ImageConstants;
 import xyz.klinker.wedding.fragment.GuestInfoFragment;
 import xyz.klinker.wedding.fragment.GuestListFragment;
 import xyz.klinker.wedding.fragment.ReceptionInfoFragment;
@@ -25,7 +26,6 @@ import xyz.klinker.wedding.listener.GuestClickListener;
 
 public class MainActivity extends AppCompatActivity implements GuestClickListener {
 
-    private static final String IMAGE_URL = "https://s32.postimg.org/xpjqzovc5/profile.jpg";
 
     private TextSwitcher title;
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements GuestClickListene
         title = (TextSwitcher) findViewById(R.id.title_switcher);
         ImageView profile = (ImageView) findViewById(R.id.profile);
 
-        Glide.with(this).load(IMAGE_URL).centerCrop().into(profile);
+        Glide.with(this).load(ImageConstants.PROFILE_IMAGE_URL).centerCrop().into(profile);
 
         Animation in = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
         Animation out = AnimationUtils.loadAnimation(this, android.R.anim.fade_out);
